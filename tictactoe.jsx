@@ -5,10 +5,9 @@ const Board = () => {
     const [gameState, setGameState] = React.useState([]);
     let status = `Winner is ${checkForWinner(gameState)}`;
     let currentPlayer = `${player === 0 ? 'X' : 'O'}`
-    // Part 1 step 1 code goes here
-    // Use conditional logic to set a variable to either 'Player O' or  'Player X'
+    // Using conditional logic to set a variable to either 'Player O' or  'Player X'
   
-    console.log(`We hav a winner ${status}`);
+    console.log(`We have a winner ${status}`);
   
     const takeTurn = (id) => {
       setGameState([...gameState, { id: id, player: player }]);
@@ -39,7 +38,6 @@ const Board = () => {
         </div>
         <div id="info">
           {/* 
-            Part 1 step 2 code goes here 
             Display the player's turn <h1>
           */}
           <h1 id="turn">Next Player: {currentPlayer}</h1>
@@ -60,7 +58,7 @@ const Board = () => {
   
     return (
       <button
-        // Part 2: update the return statement below to add css classes
+        //using another condition to set color based on player
         className={tik === 1 ? "red" : "white"}
         onClick={() => {
           setTik(takeTurn(id));
@@ -84,7 +82,6 @@ const Board = () => {
   // Checking for Winner takes a bit of work
   // Use JavaScript Sets to check players choices
   // against winning combinations
-  // Online there is more compact version but Dr. Williams prefers this one
   
   const win = [
     // rows
